@@ -1,120 +1,49 @@
-
-<!DOCTYPE html>
-<html lang="fi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JAMAN | Autopesu ja autonhuolto</title>
-<meta name="description" content="JAMAN tarjoaa autonpesua, auton korjausta ja auton kiillotusta Espoossa.">
+<!doctype html>
+<html lang="fi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#123b2e">
+<title>JAMAN | Autopesu ja autohuolto Espoossa</title>
+<meta name="description" content="JAMAN tarjoaa autonpesua, auton korjausta, huoltoa ja kiillotusta Espoossa. Varaa aika verkossa tai ota yhteyttä WhatsAppilla.">
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;color:#202923;background:#fff;line-height:1.6}
-header{background:#153c30;color:white;padding:20px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-.logo{font-size:30px;font-weight:bold;letter-spacing:3px}
-nav{display:flex;align-items:center;gap:15px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none}
-button{cursor:pointer;padding:8px 12px;border:0;border-radius:5px;background:white;color:#153c30}
-.hero{padding:90px 8%;background:linear-gradient(120deg,#153c30,#28624b);color:white}
-.hero p{max-width:620px}
-.hero h1{font-size:clamp(36px,6vw,62px);line-height:1.1;max-width:750px;margin:15px 0}
-.btn{display:inline-block;margin-top:15px;padding:12px 22px;background:#d5efb5;color:#173d31;text-decoration:none;border-radius:6px;font-weight:bold}
-section{padding:60px 8%}
-h2{font-size:32px;color:#173d31}
-.muted{color:#657168}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:30px}
-.card{padding:25px;border:1px solid #e1e8e2;border-radius:12px;background:#fff}
-.card h3{color:#20553e;font-size:22px}
-.about{background:#f2f6f1}
-.contact{background:#fff}
-footer{background:#153c30;color:white;padding:25px 8%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-@media(max-width:700px){header{padding:18px 5%}nav{gap:10px}.hero{padding:65px 6%}section{padding:45px 6%}.cards{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-<header>
-<div class="logo">JAMAN</div>
-<nav>
-<a href="#home" data-en="Home" data-fi="Etusivu">Etusivu</a>
-<a href="#services" data-en="Services" data-fi="Palvelut">Palvelut</a>
-<a href="#about" data-en="About" data-fi="Meistä">Meistä</a>
-<a href="#contact" data-en="Contact" data-fi="Yhteystiedot">Yhteystiedot</a>
-<button onclick="lang('fi')">FI</button>
-<button onclick="lang('en')">EN</button>
-</nav>
-</header>
+:root{--g:#123b2e;--g2:#205b43;--lime:#d8efb8;--ink:#17251e;--muted:#64736a;--line:#e2eae4;--soft:#f3f7f3}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;font:16px/1.6 Arial,Helvetica,sans-serif;color:var(--ink)}
+a{color:inherit}header{position:sticky;top:0;z-index:50;background:rgba(18,59,46,.98);color:#fff;padding:15px max(5%,calc((100% - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font-size:30px;font-weight:800;letter-spacing:4px;text-decoration:none}nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap}nav a{color:white;text-decoration:none;font-weight:600}nav a:hover{color:var(--lime)}
+.langs{display:flex;gap:7px}.langs button,.menu-toggle{border:1px solid #ffffff70;background:transparent;color:white;padding:8px 12px;border-radius:8px;font-weight:bold;cursor:pointer}.langs button.active,.langs button:hover{background:var(--lime);color:var(--g)}.menu-toggle{display:none}
+.hero{background:linear-gradient(110deg,rgba(8,39,29,.94),rgba(22,76,55,.72)),url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2000&q=85') center/cover;color:white;padding:clamp(75px,10vw,130px) max(6%,calc((100% - 1180px)/2))}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-weight:bold;color:var(--lime);font-size:13px}.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.06;max-width:790px;margin:16px 0}.hero p{font-size:clamp(17px,2vw,21px);max-width:650px;color:#edf5ef}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:10px;background:var(--lime);color:var(--g);text-decoration:none;font-weight:800;border:2px solid var(--lime);transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.outline{background:transparent;color:white;border-color:#ffffffa8}
+section{padding:74px max(6%,calc((100% - 1180px)/2))}.section-head{max-width:700px;margin-bottom:30px}h2{font-size:clamp(30px,4vw,42px);line-height:1.15;color:var(--g);margin:0 0 12px}.lead{color:var(--muted);font-size:18px;margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:white;box-shadow:0 8px 28px #123b2e0a;display:flex;flex-direction:column}.card img{width:100%;height:210px;object-fit:cover}.card-body{padding:22px;display:flex;flex-direction:column;align-items:flex-start;flex:1}.card h3{font-size:23px;color:var(--g);margin:0 0 8px}.card p{color:var(--muted);margin:0 0 18px}.card .btn{margin-top:auto;font-size:14px;padding:10px 14px}.card .btn+.btn{margin-top:10px}
+.package,.contact{background:var(--soft)}.package-inner{max-width:900px;margin:auto;background:white;border:1px solid var(--line);border-radius:20px;padding:clamp(25px,5vw,48px);text-align:center;box-shadow:0 10px 35px #123b2e0c}.price{font-size:clamp(38px,6vw,54px);font-weight:800;color:var(--g);margin:6px 0}.price-note{font-size:13px;color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.about-photo{width:100%;height:340px;object-fit:cover;border-radius:18px}.points{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}.point{background:var(--soft);border-radius:12px;padding:14px;font-weight:700;color:var(--g)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.contact-card{background:white;border:1px solid var(--line);border-radius:16px;padding:25px}.contact-card h3{color:var(--g);margin-top:0}.contact-card p{margin:9px 0}.contact-card a:not(.btn){color:var(--g);font-weight:700}
+footer{background:var(--g);color:white;padding:28px max(6%,calc((100% - 1180px)/2));display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}footer a{color:white}.whatsapp{position:fixed;right:18px;bottom:18px;z-index:60;background:#20c968;color:white;text-decoration:none;font-weight:800;padding:14px 19px;border-radius:999px;box-shadow:0 7px 24px #0003}
+@media(max-width:760px){header{padding:14px 5%;flex-wrap:wrap}.logo{font-size:27px}.menu-toggle{display:block}nav{display:none;width:100%;align-items:flex-start;flex-direction:column;gap:13px;padding:10px 0 5px}nav.open{display:flex}.hero{padding:70px 6%}.cards{grid-template-columns:1fr}.card img{height:220px}section{padding:56px 6%}.about-grid,.contact-grid{grid-template-columns:1fr}.about-photo{height:240px}.points{grid-template-columns:1fr 1fr}footer{padding:25px 6%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style></head><body>
+<header><a class="logo" href="#home">JAMAN</a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
+<nav id="nav"><a href="#home" data-fi="Etusivu" data-en="Home">Etusivu</a><a href="#services" data-fi="Palvelut" data-en="Services">Palvelut</a><a href="#about" data-fi="Meistä" data-en="About us">Meistä</a><a href="#contact" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</a>
+<div class="langs"><button id="fiBtn" class="active" onclick="setLanguage('fi')">FI</button><button id="enBtn" onclick="setLanguage('en')">EN</button></div></nav></header>
 <main>
-<div class="hero" id="home">
-<p><strong>JAMAN · ESPOO, FINLAND</strong></p>
-<h1 data-en="Professional car care you can trust." data-fi="Autosi ansaitsee parasta huolenpitoa.">Autosi ansaitsee parasta huolenpitoa.</h1>
-<p data-en="Car washing, car repair and polishing services with a focus on quality and customer satisfaction." data-fi="Autopesu, auton korjaus ja kiillotus laadukkaasti ja asiakaslähtöisesti.">Autopesu, auton korjaus ja kiillotus laadukkaasti ja asiakaslähtöisesti.</p>
-<a class="btn" href="#contact" data-en="Contact us" data-fi="Ota yhteyttä">Ota yhteyttä</a>
-</div>
-<section id="services">
-<h2 data-en="Our services" data-fi="Palvelumme">Palvelumme</h2>
-<p class="muted" data-en="Reliable care for your car." data-fi="Luotettavaa huolenpitoa autollesi.">Luotettavaa huolenpitoa autollesi.</p>
-<div class="cards">
-<div class="card">
-  <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=80" alt="Professional car wash" style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-bottom:15px;">
-<h3 data-en="Car Wash" data-fi="Autopesu">Autopesu</h3>
-<p data-en="Keep your car clean with professional washing services." data-fi="Pidä autosi puhtaana huolellisella autonpesulla.">Pidä autosi puhtaana huolellisella autonpesulla.</p>
-<a class="btn" href="https://calendly.com/jamanpalvelutoy/ulkopesu-exterior-car-wash-19-99" target="_blank" data-en="Exterior Car Wash – 19,99€ 🚗" data-fi="Ulkopesu – 19,99€ 🚗">Ulkopesu – Exterior Car Wash – 19,99€ 🚗</a>
-<a class="btn" href="https://calendly.com/jamanpalvelutoy/sisa-ja-ulkopesu-interior-exterior-wash-24-99" target="_blank">Sisä- ja ulkopesu – 24,99€</a>
-<a class="btn" href="https://calendly.com/jamanpalvelutoy/auton-pesu-oljynvaihto-34-99" target="_blank">Car Wash + Oil Change – 34,99€</a>
-</div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80" alt="Car repair" style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-bottom:15px;">
-<h3 data-en="Car Repair" data-fi="Auton korjaus">Auton korjaus</h3>
-<p data-en="Contact us to discuss your car repair and maintenance needs." data-fi="Ota yhteyttä auton korjaus- ja huoltotarpeissa.">Ota yhteyttä auton korjaus- ja huoltotarpeissa.</p>
-<a class="btn" href="https://calendly.com/jamanpalvelutoy/renkaiden-vaihto-ulkopesu-59-99" target="_blank">Renkaiden vaihto + ulkopesu – 59,99€</a>
-</div>
-<div class="card">
-<img src="IMG_0433.jpeg" alt="Car polishing" style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-bottom:15px;">
-<h3 data-en="Car Polishing" data-fi="Auton kiillotus">Auton kiillotus</h3>
-<p data-en="Give your car a fresh look with professional polishing." data-fi="Anna autollesi upea kiilto ammattimaisella kiillotuksella.">Anna autollesi upea kiilto ammattimaisella kiillotuksella.</p>
-<a class="btn" href="https://calendly.com/jamanpalvelutoy/kiillotus-car-polishing-89-99" target="_blank">Car Polishing – 89,99€</a>
-</div>
-</div>
-</section>
-<section id="monthly-package" style="background:#e8f0e9;padding:40px 20px;text-align:center;border-radius:15px;margin:30px auto;max-width:900px;">
-  <h2>JAMAN Monthly Wash Package</h2>
-  <h3>Kuukausipesupaketti</h3>
-  <h1 style="color:#1f5137;font-size:36px;">120 € / month</h1>
-  <p><strong>5 interior & exterior washes</strong></p>
-  <p>5 sisä- ja ulkopesua kuukaudessa</p>
-  <p>Book once and receive your 5-wash voucher at JAMAN.</p>
-  <p>Varaa kerran ja saat viiden pesun kortin JAMANilta.</p>
-  <p>Valid during the calendar month. Unused washes do not carry over.</p>
-  <a href="https://calendly.com/jamanpalvelutoy/jaman-monthly-wash-package-5-kpl-120" target="_blank" style="display:inline-block;background:#1f5137;color:white;padding:14px 25px;border-radius:8px;text-decoration:none;font-weight:bold;">Subscribe Now / Tilaa nyt</a>
-  <p>Payment at the shop / Maksu paikan päällä</p>
-</section>
-<section class="about" id="about">
-<h2 data-en="About JAMAN" data-fi="Tietoa JAMANISTA">Tietoa JAMANISTA</h2>
-<p data-en="JAMAN is a Finland-based company focused on quality automotive services and friendly customer care. Get in touch to ask about our services." data-fi="JAMAN on Suomessa toimiva yritys, joka keskittyy laadukkaisiin autopalveluihin ja ystävälliseen asiakaspalveluun. Ota yhteyttä ja kysy lisää palveluistamme.">JAMAN on Suomessa toimiva yritys, joka keskittyy laadukkaisiin autopalveluihin ja ystävälliseen asiakaspalveluun. Ota yhteyttä ja kysy lisää palveluistamme.</p>
-</section>
-<section class="contact" id="contact">
-<h2 data-en="Contact us" data-fi="Ota yhteyttä">Ota yhteyttä</h2>
-<p data-en="Contact us for information or to arrange an appointment." data-fi="Ota yhteyttä saadaksesi lisätietoja tai sopiaksesi ajan.">Ota yhteyttä saadaksesi lisätietoja tai sopiaksesi ajan.</p>
-<p><strong>Email:</strong> <a href="mailto:info@jaman.fi">info@jaman.fi</a></p>
-<p><strong data-en="Address:" data-fi="Osoite:">Osoite:</strong> Teollisuuskatu 23, halli 9, 02920 Espoo, Finland</p>
-<a class="btn" href="https://www.google.com/maps/search/?api=1&query=Teollisuuskatu+23+02920+Espoo+Finland" target="_blank" rel="noopener" data-en="Find us on Google Maps" data-fi="Katso sijainti kartalta">Katso sijainti kartalta</a>
-</section>
-</main>
-<footer>
-<strong>JAMAN</strong>
-<span>Espoo · Finland · jaman.fi</span>
-<span>© <span id="year"></span> JAMAN</span>
-</footer>
+<div class="hero" id="home"><div class="eyebrow">JAMAN · ESPOO, FINLAND</div>
+<h1 data-fi="Autosi ansaitsee parasta huolenpitoa." data-en="Your car deserves the best care.">Autosi ansaitsee parasta huolenpitoa.</h1>
+<p data-fi="Autopesu, auton korjaus ja kiillotus laadukkaasti ja asiakaslähtöisesti." data-en="Car washing, repairs and polishing with quality workmanship and friendly service.">Autopesu, auton korjaus ja kiillotus laadukkaasti ja asiakaslähtöisesti.</p>
+<div class="actions"><a class="btn" href="https://calendly.com/jamanpalvelutoy/jaman-autohuollon-ajanvaraus-clone" target="_blank" rel="noopener" data-fi="Varaa aika verkossa" data-en="Book an appointment">Varaa aika verkossa</a><a class="btn outline" href="https://wa.me/358409604081?text=Hello%20JAMAN!%20I%20would%20like%20to%20ask%20about%20your%20car%20services." target="_blank" rel="noopener" data-fi="Kysy WhatsAppissa" data-en="Message us on WhatsApp">Kysy WhatsAppissa</a></div></div>
+<section id="services"><div class="section-head"><h2 data-fi="Palvelumme" data-en="Our services">Palvelumme</h2><p class="lead" data-fi="Luotettavaa huolenpitoa autollesi Espoossa." data-en="Reliable care for your car in Espoo.">Luotettavaa huolenpitoa autollesi Espoossa.</p></div><div class="cards">
+<article class="card"><img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1000&q=85" alt="Auton pesu"><div class="card-body"><h3 data-fi="Autopesu" data-en="Car wash">Autopesu</h3><p data-fi="Pidä autosi puhtaana huolellisella sisä- ja ulkopesulla." data-en="Keep your car clean with careful interior and exterior washing.">Pidä autosi puhtaana huolellisella sisä- ja ulkopesulla.</p>
+<a class="btn" href="https://calendly.com/jamanpalvelutoy/ulkopesu-exterior-car-wash-19-99" target="_blank" rel="noopener" data-fi="Ulkopesu – 19,99 €" data-en="Exterior wash – €19.99">Ulkopesu – 19,99 €</a><a class="btn" href="https://calendly.com/jamanpalvelutoy/sisa-ja-ulkopesu-interior-exterior-wash-24-99" target="_blank" rel="noopener" data-fi="Sisä- ja ulkopesu – 24,99 €" data-en="Interior & exterior – €24.99">Sisä- ja ulkopesu – 24,99 €</a><a class="btn" href="https://calendly.com/jamanpalvelutoy/auton-pesu-oljynvaihto-34-99" target="_blank" rel="noopener" data-fi="Pesu + öljynvaihto – 34,99 €" data-en="Wash + oil change – €34.99">Pesu + öljynvaihto – 34,99 €</a></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1000&q=85" alt="Auton korjaus ja huolto"><div class="card-body"><h3 data-fi="Auton korjaus ja huolto" data-en="Car repair & maintenance">Auton korjaus ja huolto</h3><p data-fi="Ota yhteyttä auton korjaus- ja huoltotarpeissa. Autamme sopivan palvelun ja ajan löytämisessä." data-en="Contact us about your car repair and maintenance needs. We can help arrange the right service and appointment.">Ota yhteyttä auton korjaus- ja huoltotarpeissa. Autamme sopivan palvelun ja ajan löytämisessä.</p><a class="btn" href="https://calendly.com/jamanpalvelutoy/renkaiden-vaihto-ulkopesu-59-99" target="_blank" rel="noopener" data-fi="Renkaiden vaihto + ulkopesu – 59,99 €" data-en="Tyre change + exterior wash – €59.99">Renkaiden vaihto + ulkopesu – 59,99 €</a><a class="btn" href="https://calendly.com/jamanpalvelutoy/jaman-autohuollon-ajanvaraus-clone" target="_blank" rel="noopener" data-fi="Varaa huoltoaika" data-en="Book a service">Varaa huoltoaika</a></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1000&q=85" alt="Auton kiillotus"><div class="card-body"><h3 data-fi="Auton kiillotus" data-en="Car polishing">Auton kiillotus</h3><p data-fi="Anna autollesi upea kiilto ammattimaisella kiillotuksella." data-en="Give your car a refreshed look with professional polishing.">Anna autollesi upea kiilto ammattimaisella kiillotuksella.</p><a class="btn" href="https://calendly.com/jamanpalvelutoy/kiillotus-car-polishing-89-99" target="_blank" rel="noopener" data-fi="Kiillotus – 89,99 €" data-en="Car polishing – €89.99">Kiillotus – 89,99 €</a></div></article>
+</div></section>
+<section class="package" id="monthly-package"><div class="package-inner"><div class="eyebrow" style="color:var(--g)" data-fi="SÄÄSTÄ SÄÄNNÖLLISELLÄ PESULLA" data-en="SAVE WITH REGULAR WASHES">SÄÄSTÄ SÄÄNNÖLLISELLÄ PESULLA</div><h2>JAMAN Monthly Wash Package</h2><p class="lead">Kuukausipesupaketti</p><div class="price">120 € <span style="font-size:18px">/ month</span></div><p><strong data-fi="5 sisä- ja ulkopesua kuukaudessa" data-en="5 interior & exterior washes per month">5 sisä- ja ulkopesua kuukaudessa</strong></p><p class="lead" data-fi="Varaa kerran ja saat viiden pesun kortin JAMANilta. Voimassa kalenterikuukauden ajan. Käyttämättömiä pesuja ei siirretä seuraavalle kuukaudelle." data-en="Book once and receive your five-wash voucher at JAMAN. Valid for the calendar month; unused washes do not carry over.">Varaa kerran ja saat viiden pesun kortin JAMANilta. Voimassa kalenterikuukauden ajan. Käyttämättömiä pesuja ei siirretä seuraavalle kuukaudelle.</p><a class="btn" href="https://calendly.com/jamanpalvelutoy/jaman-monthly-wash-package-5-kpl-120" target="_blank" rel="noopener" data-fi="Tilaa kuukausipaketti" data-en="Book monthly package">Tilaa kuukausipaketti</a><p class="price-note" data-fi="Maksu paikan päällä." data-en="Payment at the shop.">Maksu paikan päällä.</p></div></section>
+<section id="about"><div class="about-grid"><div><div class="eyebrow" style="color:var(--g)" data-fi="MIKSI JAMAN?" data-en="WHY JAMAN?">MIKSI JAMAN?</div><h2 data-fi="Autopalvelua ystävällisellä otteella." data-en="Car care with a personal touch.">Autopalvelua ystävällisellä otteella.</h2><p class="lead" data-fi="JAMAN on Suomessa toimiva yritys, joka keskittyy laadukkaisiin autopalveluihin ja ystävälliseen asiakaspalveluun. Ota yhteyttä ja kysy lisää palveluistamme." data-en="JAMAN is a Finland-based company focused on quality automotive services and friendly customer care. Contact us to ask about our services.">JAMAN on Suomessa toimiva yritys, joka keskittyy laadukkaisiin autopalveluihin ja ystävälliseen asiakaspalveluun. Ota yhteyttä ja kysy lisää palveluistamme.</p><div class="points"><div class="point" data-fi="✓ Ystävällinen palvelu" data-en="✓ Friendly service">✓ Ystävällinen palvelu</div><div class="point" data-fi="✓ Ajanvaraus verkossa" data-en="✓ Online booking">✓ Ajanvaraus verkossa</div><div class="point">✓ Espoo</div><div class="point" data-fi="✓ Maksu paikan päällä" data-en="✓ Pay at the shop">✓ Maksu paikan päällä</div></div></div><img class="about-photo" src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=1200&q=85" alt="Autohuollon työpaja"></div></section>
+<section class="contact" id="contact"><div class="section-head"><h2 data-fi="Ota yhteyttä" data-en="Contact JAMAN">Ota yhteyttä</h2><p class="lead" data-fi="Kysy lisää palveluista tai varaa aika helposti." data-en="Ask about our services or book an appointment.">Kysy lisää palveluista tai varaa aika helposti.</p></div><div class="contact-grid"><div class="contact-card"><h3 data-fi="Yhteystiedot" data-en="Contact details">Yhteystiedot</h3><p><strong>Email:</strong> <a href="mailto:info@jaman.fi">info@jaman.fi</a></p><p><strong>WhatsApp:</strong> <a href="https://wa.me/358409604081">+358 40 960 4081</a></p><p><strong data-fi="Osoite:" data-en="Address:">Osoite:</strong> Teollisuuskatu 23, halli 9, 02920 Espoo, Finland</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Teollisuuskatu+23+02920+Espoo+Finland" target="_blank" rel="noopener" data-fi="Avaa Google Maps" data-en="Open Google Maps">Avaa Google Maps</a></div><div class="contact-card"><h3 data-fi="Varaa aika" data-en="Book an appointment">Varaa aika</h3><p class="lead" data-fi="Valitse sopiva palvelu ja vapaa aika verkossa." data-en="Choose your service and an available time online.">Valitse sopiva palvelu ja vapaa aika verkossa.</p><a class="btn" href="https://calendly.com/jamanpalvelutoy/jaman-autohuollon-ajanvaraus-clone" target="_blank" rel="noopener" data-fi="Varaa aika verkossa" data-en="Book online">Varaa aika verkossa</a></div></div></section>
+</main><footer><strong style="letter-spacing:3px">JAMAN</strong><span>Espoo · Finland · <a href="https://jaman.fi">jaman.fi</a></span><span>© <span id="year"></span> JAMAN</span></footer>
+<a class="whatsapp" href="https://wa.me/358409604081?text=Hello%20JAMAN!%20I%20would%20like%20to%20ask%20about%20your%20car%20services." target="_blank" rel="noopener">WhatsApp</a>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
-function lang(l){
-document.documentElement.lang=l;
-document.querySelectorAll('[data-'+l+']').forEach(function(e){
-e.textContent=e.getAttribute('data-'+l);
-});
-}
-</script>
-<a href="https://calendly.com/jamanpalvelutoy/jaman-autohuollon-ajanvaraus-clone" target="_blank" style="display:block;width:fit-content;margin:30px auto;background:#1f5137;color:white;padding:15px 25px;border-radius:10px;text-decoration:none;font-weight:bold;text-align:center;">Varaa aika verkossa</a>
-  
-<a href="https://wa.me/358409604081?text=Hello%20JAMAN!%20I%20would%20like%20to%20ask%20about%20your%20car%20services." target="_blank" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:14px 20px;border-radius:50px;text-decoration:none;font-weight:bold;z-index:9999;box-shadow:0 4px 10px #0004;">WhatsApp Us</a>
-</body>
-</html>
+function setLanguage(l){document.documentElement.lang=l;document.querySelectorAll('[data-'+l+']').forEach(e=>e.textContent=e.getAttribute('data-'+l));document.getElementById('fiBtn').classList.toggle('active',l==='fi');document.getElementById('enBtn').classList.toggle('active',l==='en');}
+function toggleMenu(){const n=document.getElementById('nav'),b=document.querySelector('.menu-toggle');n.classList.toggle('open');b.setAttribute('aria-expanded',n.classList.contains('open')?'true':'false');}
+document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('nav').classList.remove('open');document.querySelector('.menu-toggle').setAttribute('aria-expanded','false');}));
+</script></body></html>
